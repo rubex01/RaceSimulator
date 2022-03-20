@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{A57F9911-2592-46D5-83FA-CEBF0C5E7096}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "Console\Console.csproj", "{A57F9911-2592-46D5-83FA-CEBF0C5E7096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{37F92B6E-00F3-43BC-B01D-E4E921A9CDA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{37F92B6E-00F3-43BC-B01D-E4E921A9CDA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{9B185DC9-52B0-4EFA-A838-DA9B75491924}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{9B185DC9-52B0-4EFA-A838-DA9B75491924}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37F92B6E-00F3-43BC-B01D-E4E921A9CDA6} = {37F92B6E-00F3-43BC-B01D-E4E921A9CDA6}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerTest", "ControllerTest\ControllerTest.csproj", "{9486203A-4BCE-4E4D-A175-A2191A0F3620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerTest", "ControllerTest\ControllerTest.csproj", "{9486203A-4BCE-4E4D-A175-A2191A0F3620}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

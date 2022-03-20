@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal interface IParticipant
+    public interface IParticipant
     {
         public string Name { get; set; }
 

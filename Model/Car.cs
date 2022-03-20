@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class Car : IEquipment
+    public class Car : IEquipment
     {
         public int Quality { get; set; }
 
@@ -16,12 +16,10 @@ namespace Model
 
         public bool IsBroken { get; set; }
 
-        public Car(int Quality, int Performance, int Speed, bool IsBroken)
+        public Car(int Speed, bool IsBroken)
         {
-            this.Quality = Quality; 
-            this.Performance = Performance;
-            this.IsBroken = IsBroken;
             this.Speed = Speed;
+            this.IsBroken = IsBroken;
         }
     }
 }
