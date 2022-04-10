@@ -23,42 +23,57 @@ namespace Controller
         private static void AddParticipants()
         {
             List<IParticipant> participants = new List<IParticipant>();
-            participants.Add(new Driver("Driver 1", 0, new Car(70, false), TeamColors.Red));
-            participants.Add(new Driver("Driver 2", 0, new Car(80, false), TeamColors.Green));
-            participants.Add(new Driver("Driver 3", 0, new Car(76, false), TeamColors.Yellow));
-            participants.Add(new Driver("Driver 4", 0, new Car(79, false), TeamColors.Blue));
+            participants.Add(new Driver("Ferrari", 0, new Car(70, false), TeamColors.Red));
+            participants.Add(new Driver("Red Bull", 0, new Car(80, false), TeamColors.Green));
+            participants.Add(new Driver("Mercedes", 0, new Car(76, false), TeamColors.Yellow));
+            participants.Add(new Driver("Aston Martin", 0, new Car(79, false), TeamColors.Blue));
             Competition.Participants = participants;
         }
 
         private static void AddTracks()
         {
-            Queue<Track> trackQueue = new Queue<Track>();
+            Competition.Tracks = new Queue<Track>();
 
             // Track 1
             LinkedList<Section> sections = new LinkedList<Section>();
-            sections.Append(new Section(SectionTypes.Straight));
-            sections.Append(new Section(SectionTypes.RightCorner));
-            sections.Append(new Section(SectionTypes.Straight));
-            sections.Append(new Section(SectionTypes.RightCorner));
-            sections.Append(new Section(SectionTypes.Straight));
-            sections.Append(new Section(SectionTypes.RightCorner));
-            sections.Append(new Section(SectionTypes.Straight));
-            sections.Append(new Section(SectionTypes.RightCorner));
-            trackQueue.Enqueue(new Track("Track 1", sections));
+            sections.AddLast(new Section(SectionTypes.StartGrid));
+            sections.AddLast(new Section(SectionTypes.StartGrid));
+            sections.AddLast(new Section(SectionTypes.StartGrid));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+            sections.AddLast(new Section(SectionTypes.LeftCorner));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.LeftCorner));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Straight));
+            sections.AddLast(new Section(SectionTypes.Finish));
+            sections.AddLast(new Section(SectionTypes.RightCorner));
+
+            Competition.Tracks.Enqueue(new Track("Track 1", sections));
 
             // Track 2
             LinkedList<Section> sections2 = new LinkedList<Section>();
-            sections2.Append(new Section(SectionTypes.Straight));
-            sections2.Append(new Section(SectionTypes.RightCorner));
-            sections2.Append(new Section(SectionTypes.Straight));
-            sections2.Append(new Section(SectionTypes.RightCorner));
-            sections2.Append(new Section(SectionTypes.Straight));
-            sections2.Append(new Section(SectionTypes.RightCorner));
-            sections2.Append(new Section(SectionTypes.Straight));
-            sections2.Append(new Section(SectionTypes.RightCorner));
-            trackQueue.Enqueue(new Track("Track 2", sections2));
-
-            Competition.Tracks = trackQueue;
+            sections2.AddLast(new Section(SectionTypes.StartGrid));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            Competition.Tracks.Enqueue(new Track("Track 2", sections2));
         }
 
         public static void NextRace()

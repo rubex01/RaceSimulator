@@ -12,10 +12,26 @@ namespace Model
 
         public LinkedList<Section> Sections { get; set; }
 
-        public Track(string Name, LinkedList<Section> Sections)
+        public Track(string Name, LinkedList<Section> sections)
         {
             this.Name = Name;
-            this.Sections = Sections;
+            this.Sections = sections;
+        }
+
+        public Track(string Name, SectionTypes[] sections)
+        {
+            this.Name = Name;
+            this.Sections = SectionTypesArrayToSectionLinkedList(sections);
+        }
+
+        private LinkedList<Section> SectionTypesArrayToSectionLinkedList(SectionTypes[] sectionTypes)
+        {
+            var newLinkedList = new LinkedList<Section>();
+            foreach (SectionTypes type in sectionTypes)
+            {
+                newLinkedList.Append(new Section(type));
+            }
+            return newLinkedList;
         }
     }
 }

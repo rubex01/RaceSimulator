@@ -1,10 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Controller;
+using RaceSimulator;
 
 Data.Initialize();
 Data.NextRace();
 
-Console.WriteLine(Data.CurrentRace.Track.Name);
+Visualization.Initialize();
+Visualization.DrawTrack(Data.CurrentRace.Track);
 
 for (; ; )
 {
