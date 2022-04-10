@@ -106,8 +106,11 @@ namespace RaceSimulator
 
         public static void Initialize()
         {
-            //Console.Clear();
+            Console.Clear();
             _currentDirection = Direction.right;
+            Data.CurrentRace.DriversChanged += OnDriversChanged;
+            Data.CurrentRace.RaceFinished += OnRaceFinished;
+            Data.CurrentRace.Start();
         }
 
         public static void DrawTrack(Track track)
@@ -239,9 +242,22 @@ namespace RaceSimulator
         }
         public static string drawParticipantsInSection(string sectionInput, IParticipant left, IParticipant right)
         {
-            sectionInput = sectionInput.Replace('1', (left == null) ? ' ' : (left.Name).ToUpper()[0]);
-            sectionInput = sectionInput.Replace('2', (right == null) ? ' ' : (right.Name).ToUpper()[0]);
+            sectionInput = sectionInput.Replace('1', (left == null) ? ' ' : (left.Equipment.IsBroken ? '~' : (left.Name).ToUpper()[0]));
+            sectionInput = sectionInput.Replace('2', (right == null) ? ' ' : (right.Equipment.IsBroken ? '~' : (right.Name).ToUpper()[0]));
             return sectionInput;
+        }
+
+        public static void OnDriversChanged(object model, DriversChangedEventArgs e)
+        {
+            DrawTrack(e.Track);
+        }
+
+        public static void OnRaceFinished(object model, EventArgs e)
+        {
+            Data.CurrentRace.DriversChanged -= OnDriversChanged;
+            Data.CurrentRace.RaceFinished -= OnRaceFinished;
+            Data.NextRace();
+            Initialize();
         }
     }
 }

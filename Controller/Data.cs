@@ -68,11 +68,58 @@ namespace Controller
             // Track 2
             LinkedList<Section> sections2 = new LinkedList<Section>();
             sections2.AddLast(new Section(SectionTypes.StartGrid));
+            sections2.AddLast(new Section(SectionTypes.StartGrid));
+            sections2.AddLast(new Section(SectionTypes.StartGrid));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.LeftCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.LeftCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.LeftCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.LeftCorner));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.Straight));
+            sections2.AddLast(new Section(SectionTypes.LeftCorner));
+            sections2.AddLast(new Section(SectionTypes.Finish));
+            sections2.AddLast(new Section(SectionTypes.Finish));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+            sections2.AddLast(new Section(SectionTypes.RightCorner));
+
             Competition.Tracks.Enqueue(new Track("Track 2", sections2));
         }
 
