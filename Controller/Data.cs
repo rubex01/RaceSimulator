@@ -7,18 +7,20 @@ using Model;
 
 namespace Controller
 {
-    static class Data
+    public static class Data
     {
-        private static Competition Competition { get; set; }
+        public static Competition Competition { get; set; }
+
+        public static Race CurrentRace { get; set; }
 
         public static void Initialize()
         {
             Competition = new Competition(new List<IParticipant>(), new Queue<Track>());
-            addParticipants();
-            addTracks();
+            AddParticipants();
+            AddTracks();
         }
 
-        private static void addParticipants()
+        private static void AddParticipants()
         {
             List<IParticipant> participants = new List<IParticipant>();
             participants.Add(new Driver("Driver 1", 0, new Car(70, false), TeamColors.Red));
@@ -28,7 +30,7 @@ namespace Controller
             Competition.Participants = participants;
         }
 
-        private static void addTracks()
+        private static void AddTracks()
         {
             Queue<Track> trackQueue = new Queue<Track>();
 
@@ -57,6 +59,15 @@ namespace Controller
             trackQueue.Enqueue(new Track("Track 2", sections2));
 
             Competition.Tracks = trackQueue;
+        }
+
+        public static void NextRace()
+        {
+            Track? nextTrack = Competition.NextTrack();
+            if (nextTrack != null)
+            {
+                CurrentRace = new Race(nextTrack, Competition.Participants);
+            }
         }
     }
 }

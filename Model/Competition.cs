@@ -17,5 +17,10 @@ namespace Model
             this.Tracks = Tracks;
             this.Participants = Participants;
         }
+
+        public Track? NextTrack()
+        {
+            return Tracks.Count > 0 ? Tracks.Dequeue() : null;
+        }
     }
 }
