@@ -15,7 +15,7 @@ namespace Controller
 
         public static void Initialize()
         {
-            Competition = new Competition(new List<IParticipant>(), new Queue<Track>());
+            Competition = new Competition();
             AddParticipants();
             AddTracks();
         }

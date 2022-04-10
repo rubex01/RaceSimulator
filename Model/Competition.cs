@@ -12,10 +12,10 @@ namespace Model
 
         public Queue<Track> Tracks { get; set; }
 
-        public Competition(List<IParticipant> Participants, Queue<Track> Tracks)
+        public Competition()
         {
-            this.Tracks = Tracks;
-            this.Participants = Participants;
+            this.Tracks = new Queue<Track>();
+            this.Participants = new List<IParticipant>();
         }
 
         public Track? NextTrack()
