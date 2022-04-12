@@ -6,9 +6,26 @@
         xmlns:local="clr-namespace:RaceSimulatorGUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:DataContext/>
+    </Window.DataContext>
     <Grid>
-        <Grid Background="#FFAAEFD7">
-            <Image HorizontalAlignment="Left" Height="253" Margin="10,64,0,0" VerticalAlignment="Top" Width="691"/>
+        <Grid Background="#FFAAEFD7" Margin="0,0,-418,-440">
+            <Image HorizontalAlignment="Left" Height="782" Margin="10,98,0,0" VerticalAlignment="Top" Width="1203" x:Name="Screen"/>
+            <DockPanel LastChildFill="False">
+                <Menu VerticalAlignment="Top" Height="20" DockPanel.Dock="Top">
+                    <MenuItem Header="Menu">
+                        <MenuItem Header="Statistieken" Click="MenuItem_Statistics_OnClick" />
+                        <MenuItem Header="Deelnemer statistieken" Click="MenuItem_StatisticsParticipants_OnClick" >
+                            <MenuItem.DataContext>
+                                <local:DataContext/>
+                            </MenuItem.DataContext>
+                        </MenuItem>
+                        <MenuItem Header="Exit" Click="MenuItem_Exit_OnClick" />
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <Label Content="{Binding NameCurrentTrack}" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>
