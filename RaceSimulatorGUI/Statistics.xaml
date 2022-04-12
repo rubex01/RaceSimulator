@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Statistics" Height="450" Width="800">
     <Grid>
-        
+        <Grid.DataContext>
+            <local:DataContext/>
+        </Grid.DataContext>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="337*"/>
+            <ColumnDefinition Width="463*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Tracknaam:" HorizontalAlignment="Left" Margin="29,22,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rondes:" HorizontalAlignment="Left" Margin="29,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Aantal deelnemers:" HorizontalAlignment="Left" Margin="30,115,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
