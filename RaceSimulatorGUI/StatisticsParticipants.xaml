@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:RaceSimulatorGUI"
         mc:Ignorable="d"
         Title="StatisticsParticipants" Height="450" Width="800">
+    <Window.DataContext>
+        <local:DataContext/>
+    </Window.DataContext>
     <Grid>
-        <Label Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" Height="249" Width="380"/>
+        <Label Content="{Binding DriverInfo}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" Height="202" Width="271"/>
+        <Label Content="{Binding MetersDrivenByDriverInfo}" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Height="202" Width="229"/>
 
     </Grid>
 </Window>

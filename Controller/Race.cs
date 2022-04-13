@@ -70,8 +70,8 @@ namespace Controller
         {
             foreach (IParticipant Participant in Participants)
             {
-                Participant.Equipment.Performance = _random.Next(50, 100);
-                Participant.Equipment.Quality = _random.Next(50, 100);
+                Participant.Equipment.Performance = _random.Next(20, 100);
+                Participant.Equipment.Quality = _random.Next(20, 100);
             }
         }
 
@@ -120,12 +120,16 @@ namespace Controller
 
                 if (data.Left != null && !data.Left.Equipment.IsBroken)
                 {
-                    data.DistanceLeft += (data.Left.Equipment.Performance * (data.Left.Equipment.Speed + data.Left.Equipment.Quality) / 2 / 10);
+                    int distance = (data.Left.Equipment.Performance * (data.Left.Equipment.Speed + data.Left.Equipment.Quality) / 2 / 10);
+                    data.Left.Points += distance;
+                    data.DistanceLeft += distance;
                 }
 
                 if (data.Right != null && !data.Right.Equipment.IsBroken)
                 {
-                    data.DistanceRight += (data.Right.Equipment.Performance * (data.Right.Equipment.Speed + data.Right.Equipment.Quality) / 2 / 10);
+                    int distance = (data.Right.Equipment.Performance * (data.Right.Equipment.Speed + data.Right.Equipment.Quality) / 2 / 10);
+                    data.Right.Points += distance;
+                    data.DistanceRight += distance;
                 }
             }
         }
@@ -231,14 +235,14 @@ namespace Controller
         {
             foreach (IParticipant Participant in Participants)
             {
-                if (Participant.Equipment.IsBroken && (_random.Next(0, 170) == _random.Next(0, 2)))
+                if (Participant.Equipment.IsBroken && (_random.Next(0, 500) == _random.Next(0, 2)))
                 {
                     Participant.Equipment.Quality -= 10;
                     Participant.Equipment.IsBroken = false;
                 }
                 else
                 {
-                    Participant.Equipment.IsBroken = (_random.Next(0, 200) == _random.Next(0, 2)) ? true : false;
+                    Participant.Equipment.IsBroken = (_random.Next(0, 100) == _random.Next(0, 2)) ? true : false;
                 }
             }
         }

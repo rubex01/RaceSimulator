@@ -24,12 +24,12 @@ namespace Model
             this.Sections = SectionTypesArrayToSectionLinkedList(sections);
         }
 
-        private LinkedList<Section> SectionTypesArrayToSectionLinkedList(SectionTypes[] sectionTypes)
+        public LinkedList<Section> SectionTypesArrayToSectionLinkedList(SectionTypes[] sectionTypes)
         {
             var newLinkedList = new LinkedList<Section>();
             foreach (SectionTypes type in sectionTypes)
             {
-                newLinkedList.Append(new Section(type));
+                newLinkedList.AddLast(new Section(type));
             }
             return newLinkedList;
         }
