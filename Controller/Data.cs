@@ -115,7 +115,7 @@ namespace Controller
             sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.LeftCorner));
-            sections2.AddLast(new Section(SectionTypes.Finish));
+            sections2.AddLast(new Section(SectionTypes.Straight));
             sections2.AddLast(new Section(SectionTypes.Finish));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
             sections2.AddLast(new Section(SectionTypes.RightCorner));
