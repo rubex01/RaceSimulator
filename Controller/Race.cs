@@ -75,7 +75,7 @@ namespace Controller
             }
         }
 
-        private void SetupLapDictionary()
+        public void SetupLapDictionary()
         {
             foreach (IParticipant Participant in Participants)
             {
@@ -215,7 +215,7 @@ namespace Controller
             return AnyDriverChangedSection;
         }
 
-        private bool MoveDrivers()
+        public bool MoveDrivers()
         {
             CalculateNewDistances();
             return CalculateDriverSections();
